@@ -1,0 +1,45 @@
+import random
+import time
+
+mi_puntaje = 0
+puntaje_compu = 0
+
+while True:
+    x = random.randint(1,3)
+
+    respuesta_usuario = input("Ingrese piedra, papel o tijera o la palabra salir para terminar el juego")
+
+    if respuesta_usuario == "salir":
+        print("Los puntajes finales son ........")
+        time.sleep(2)
+        if puntaje_compu == mi_puntaje:
+            print("Hubo un empate!!!!")
+            
+        print("Puntaje del Usuario = ", mi_puntaje)
+        print("Puntaje del Compu = ", puntaje_compu)
+        break
+
+    if respuesta_usuario != "piedra" and respuesta_usuario != "papel" and respuesta_usuario != "tijera":
+        print("El usuario debe escoger un objecto valido")
+        continue
+
+    if x == 1:
+        respuesta_maquina = "piedra"
+    elif x == 2:
+        respuesta_maquina = "papel"
+    else:
+        respuesta_maquina = "tijera"
+
+    if respuesta_usuario == respuesta_maquina:
+        print("Maquina eligio ", respuesta_maquina)
+        print("Un empate")
+        continue
+
+    if respuesta_usuario == "piedra" and respuesta_maquina == "tijera" or respuesta_usuario == "papel" and respuesta_maquina == "piedra" or respuesta_usuario == "tijera" and respuesta_maquina == "papel":
+        print("Maquina eligio ", respuesta_maquina)
+        print("Gana usuario")
+        mi_puntaje += 1
+    else:
+        print("Maquina eligio ", respuesta_maquina)
+        print("Gana Maquina")
+        puntaje_compu += 1
