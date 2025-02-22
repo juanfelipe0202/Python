@@ -1,0 +1,95 @@
+import turtle
+import random
+
+t = turtle.Turtle()
+t.up()
+t.goto(-100,100)
+t.down()
+t.speed(0)
+
+for i in range(15):
+    t.write(i)
+    t.rt(90)
+    t.fd(120)
+    t.lt(180)
+    t.fd(120)
+    t.rt(90)
+    t.fd(20)
+aficion = turtle.Turtle()
+aficion.shape("turtle")
+aficion.color("grey")
+aficion.up()
+aficion.goto(-60,-40)
+aficion.lt(90)
+aficion.stamp()
+aficion.goto(-40,-40)
+aficion.stamp()
+aficion.goto(-20,-40)
+aficion.stamp()
+aficion.goto(0,-40)
+aficion.stamp()
+aficion.goto(20,-40)
+aficion.stamp()
+first = turtle.Turtle()
+first.shape("turtle")
+first.color("red")
+first.up()
+first.goto(-120,80)
+first.down()
+
+second =  turtle.Turtle()
+second.shape("turtle")
+second.color("gold")
+second.up()
+second.goto(-120,50)
+second.down()
+
+three = turtle.Turtle()
+three.shape("turtle")
+three.color("blue")
+three.up()
+three.goto(-120,20)
+three.down()
+x_first = 0
+x_second = 0
+x_three = 0
+
+win = input ("Cuál tortuga ganará rojo , dorado o azul:")
+text = turtle.Turtle()
+text.up()
+text.goto(-120,120)
+text.write("Piensas que el ganadora será " + win)
+while True:
+    if x_first >= 305 or x_second >= 305 or x_three >= 305:
+        break
+    paso1 = random.randint(1,5)
+    x_first = paso1 + x_first
+    first.forward(paso1)
+    
+    paso2 = random.randint(1,5)
+    x_second = paso2 + x_second
+    second.forward(paso2)
+    
+    paso3 = random.randint(1,5)
+    x_three = paso2 + x_three
+    three.forward(paso3)
+    
+if x_first >= 305:
+    t.write("Gano el Rojo")
+if x_second >= 305:
+    t.write("Gano el Dorado")
+if x_three >= 305:
+    t.write("Gano el Azul")
+
+if win == "rojo":
+    t.write("Lograste Acertar El Ganador")
+else:
+    t.write("No Lograste Acertar Mas Suerte La Proxima")
+if win == "dorado":
+    t.write("Lograste Acertar El Ganador")
+else:
+    t.write("No Lograste Acertar Mas Suerte La Proxima")
+if win == "azul":
+    t.write("Lograste Acertar El Ganador")
+else:
+    t.write("No Lograste Acertar Mas Suerte La Proxima")
